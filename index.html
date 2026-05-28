@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvores Nativas do Brasil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">BioBrasil</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Flora Nativa do Brasil</h1>
+            <p>Conheça a riqueza, a beleza e a importância das árvores que moldam as nossas paisagens e biomas.</p>
+            <a href="#catalogo" class="btn">Explorar Árvores</a>
+        </div>
+    </section>
+
+    <main id="catalogo" class="container">
+        <h2>Espécies em Destaque</h2>
+        <p class="subtitle">Clique em uma árvore para saber mais sobre sua importância ecológica.</p>
+        
+        <div class="grid-arvores">
+            <div class="card" data-tree="ipe">
+                <div class="card-img ipe-bg"></div>
+                <div class="card-body">
+                    <h3>Ipê-Amarelo</h3>
+                    <p class="cientifico">Handroanthus albus</p>
+                    <p>Famoso por sua florada espetacular no inverno, é um dos maiores símbolos do Brasil.</p>
+                </div>
+            </div>
+
+            <div class="card" data-tree="paubrasil">
+                <div class="card-img pau-bg"></div>
+                <div class="card-body">
+                    <h3>Pau-Brasil</h3>
+                    <p class="cientifico">Paubrasilia echinata</p>
+                    <p>A árvore que deu nome ao nosso país, historicamente valiosa e hoje protegida por lei.</p>
+                </div>
+            </div>
+
+            <div class="card" data-tree="araucaria">
+                <div class="card-img araucaria-bg"></div>
+                <div class="card-body">
+                    <h3>Araucária</h3>
+                    <p class="cientifico">Araucaria angustifolia</p>
+                    <p>Símbolo do Sul do país, produz o pinhão e é fundamental para a biodiversidade local.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BioBrasil - Preservando nossa biodiversidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
