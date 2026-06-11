@@ -1,25 +1,26 @@
-// Aguarda o carregamento total do DOM
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // Seleciona todos os cards de árvores
-    const cards = document.querySelectorAll(".card");
+// Selecionando os elementos da página que vamos modificar
+const botao = document.getElementById('botao-estacao');
+const statusIpe = document.getElementById('status-ipe');
+const corpoPagina = document.body;
 
-    // Banco de dados simples para os fatos curiosos
-    const fatosCuriosos = {
-        ipe: "Sabia que o Ipê-Amarelo foi declarado a Flor Nacional do Brasil em 1961? Ele costuma florescer justamente nos meses mais secos do ano!",
-        paubrasil: "O Pau-Brasil possui uma seiva interior de cor vermelha-brasa (daí o nome 'Brasil'). Ele quase foi extinto devido à exploração massiva no período colonial.",
-        araucaria: "A Araucária é uma árvore pré-histórica que conviveu com os dinossauros. Suas sementes (os pinhões) alimentam mais de 70 espécies de animais no inverno."
-    };
+// Variável para controlar o estado atual (se está florido ou não)
+let estaFlorido = false;
 
-    // Adiciona evento de clique a cada card
-    cards.forEach(card => {
-        card.addEventListener("click", () => {
-            const tipoArvore = card.getAttribute("data-tree");
-            const curiosidade = fatosCuriosos[tipoArvore];
-            
-            if (curiosidade) {
-                alert(`🌲 Fato Curioso:\n\n${curiosidade}`);
-            }
-        });
-    });
+// Função que muda o visual do site
+botao.addEventListener('click', () => {
+    if (!estaFlorido) {
+        // Se não estiver florido, ele floresce!
+        statusIpe.textContent = "🟡 O Ipê está totalmente florido em um amarelo radiante!";
+        statusIpe.classList.add('amarelo-vivo');
+        corpoPagina.classList.add('florido');
+        botao.textContent = "Cair as folhas (Voltar ao Outono) 🍂";
+        estaFlorido = true;
+    } else {
+        // Se já estiver florido, as folhas caem
+        statusIpe.textContent = "🍂 O Ipê está sem folhas, se preparando para florir...";
+        statusIpe.classList.remove('amarelo-vivo');
+        corpoPagina.classList.remove('florido');
+        botao.textContent = "Florescer Ipê! 🌸";
+        estaFlorido = false;
+    }
 });
